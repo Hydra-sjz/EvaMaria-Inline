@@ -46,6 +46,8 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('Ⓜ️ Group', url='https://t.me/songdownload_group'),
             InlineKeyboardButton('💫 Help', callback_data='help')
+            ],[
+            InlineKeyboardButton('❌', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -89,6 +91,8 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('Ⓜ️ Group', url='https://t.me/songdownload_group'),
             InlineKeyboardButton('🌴 Help', callback_data='help')
+            ],[
+            InlineKeyboardButton('❌', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
