@@ -107,6 +107,9 @@ async def next_page(bot, query):
                 InlineKeyboardButton("NEXT ==>", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
+    btn.insert(0, [
+        InlineKeyboardButton("🔍 Search Song 🎶", switch_inline_query_current_chat='')
+    ])
     try:
         await query.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(btn)
