@@ -108,7 +108,7 @@ async def next_page(bot, query):
             ],
         )
     btn.insert(0, [
-        InlineKeyboardButton("🔍 Search Song 🎶", switch_inline_query_current_chat='')
+        InlineKeyboardButton("🔍 Search Song🎶", switch_inline_query_current_chat='')
     ])
     try:
         await query.edit_message_reply_markup(
