@@ -31,6 +31,15 @@ and Enjoy 🌟"""
 • /filters - <code>list all the filters of a chat</code>
 • /del - <code>delete a specific filter in chat</code>
 • /delall - <code>delete the whole filters in a chat (chat owner only)</code>"""
+    GFILTER_TXT = """
+Global filters are manual filters saved by bot admins that work in all groups. They provide latest Musics in a easy to use Format.
+
+Commands:
+/addg - To add Global filters [Only admin].
+/gfilters - To find my saved filters.
+/delg - Delete Global filters from my database [Only Admin].
+/delallg - To Delete  All Global filters from my database [Only admin]."""
+
     BUTTON_TXT = """Help: <b>Buttons</b>
 
 - Eva Maria Supports both url and alert inline buttons.
