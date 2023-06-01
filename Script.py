@@ -6,9 +6,9 @@ and Enjoy 🌟"""
     HELP_TXT = """Hey {}\nHere is my commands."""
     ABOUT_TXT = """My Name: {}
 👤 Creator: <a href=https://t.me/TeamEvaMyra>Team Eva</a>
-📚 Library: 𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼
-💱 Language: 𝙿𝚈𝚃𝙷𝙾𝙽 𝟹
-💾 DataBase: 𝙼𝙾𝙽𝙶𝙾 𝙳𝙱
+📚 Library: Program 
+💱 Language: Python 𝟹
+💾 DataBase: Mango 𝙳𝙱
 📡 Bot Server: Heroku 
 📊 Build Status: v1.0.1 [ 𝙱𝙴𝚃𝙰 ]"""
     SOURCE_TXT = """<b>NOTE:</b>
