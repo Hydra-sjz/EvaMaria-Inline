@@ -423,9 +423,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('Hey i am 𝗦ᴏɴɢs•✘•[ᴀғ]🦄')
     elif query.data == "help":
         buttons = [[
+            InlineKeyboardButton('🔽 FILTERS 🔽', callback_data='jdhddh')
+        ], [
             InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
-            InlineKeyboardButton('Auto Filter', callback_data='autofilter'),
+            InlineKeyboardButton('Auto Filter', callback_data='autofilter')
+        ], [
             InlineKeyboardButton('Global Filter', callback_data='gfilter')
+        ], [
+            InlineKeyboardButton('➖➖➖➖➖➖➖', callback_data='jdhd')
         ], [
             InlineKeyboardButton('Connection', callback_data='coct'),
             InlineKeyboardButton('Extra Mods', callback_data='extra')
