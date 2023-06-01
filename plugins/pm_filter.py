@@ -407,10 +407,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('🔍 Search 🔎', switch_inline_query_current_chat='')
+            InlineKeyboardButton('🔍 Search...', switch_inline_query_current_chat='')
         ], [
-            InlineKeyboardButton('🍾 Help', callback_data='help'),
-            InlineKeyboardButton('Ⓜ️ Group', url='https://t.me/songdownload_group')
+            InlineKeyboardButton('Help', callback_data='help'),
+            InlineKeyboardButton('Group', url='https://t.me/songdownload_group')
         ], [
             InlineKeyboardButton('❌', callback_data='close_data')
         ]]
@@ -424,7 +424,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
-            InlineKeyboardButton('Auto Filter', callback_data='autofilter')
+            InlineKeyboardButton('Auto Filter', callback_data='autofilter'),
+            InlineKeyboardButton('Global Filter', callback_data='gfilter')
         ], [
             InlineKeyboardButton('Connection', callback_data='coct'),
             InlineKeyboardButton('Extra Mods', callback_data='extra')
@@ -461,6 +462,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.SOURCE_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "gfilter":
+        buttons = [[
+            InlineKeyboardButton('⬅️', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.GFILTER_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
