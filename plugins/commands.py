@@ -44,8 +44,8 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('🔍 Search...', switch_inline_query_current_chat='')
             ],[
-            InlineKeyboardButton('Help', callback_data='help'),
-            InlineKeyboardButton('Group', url='https://t.me/songdownload_group')
+            InlineKeyboardButton('➕ Add Me To Your Groups!', url=f'http://t.me/SongsAf_bot?startgroup=true'),
+            InlineKeyboardButton('MyGroup', url='https://t.me/songdownload_group')
             ],[
             InlineKeyboardButton('❌', callback_data='close_data')
         ]]
@@ -89,8 +89,8 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('🔍 Search...', switch_inline_query_current_chat='')
             ],[
-            InlineKeyboardButton('Help', callback_data='help'),
-            InlineKeyboardButton('Group', url='https://t.me/songdownload_group')
+            InlineKeyboardButton('➕ Add Me To Your Groups!', url=f'http://t.me/SongsAf_bot?startgroup=true'),
+            InlineKeyboardButton('MyGroup', url='https://t.me/songdownload_group')
             ],[
             InlineKeyboardButton('❌', callback_data='close_data')
         ]]
