@@ -1,7 +1,7 @@
 import logging
 from pyrogram import Client, emoji, filters
 from pyrogram.errors.exceptions.bad_request_400 import QueryIdInvalid
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultCachedDocument, InlineQuery
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultCachedDocument, InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 
 from database.ia_filterdb import get_search_results
 from utils import get_size
@@ -28,10 +28,8 @@ async def answer(bot, query):
         ]
         await query.answer(results=answer, cache_time=5, switch_pm_text="💫 Welcome To @Musicx_dlbot", switch_pm_parameter="help")
 
-
-    
-    if '|' in query.query:
-        string, file_type = query.query.split('|', maxsplit=1)
+    if '.s' in query.query:
+        string, file_type = query.query.split('.s', maxsplit=1)
         string = string.strip()
         file_type = file_type.strip().lower()
     else:
