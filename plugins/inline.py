@@ -19,7 +19,7 @@ async def answer(bot, query):
     if iq == "":
         answer = [
             InlineQueryResultArticle(
-                title="〽️",
+                title="🎵 @SongsAf_bot",
                 description="💙You can Search Music.",
                 thumb_url="https://telegra.ph/file/1d586532543a0084eabcd.jpg",
                 input_message_content=InputTextMessageContent("💭 Welcome to Music Search inline Bot."),
