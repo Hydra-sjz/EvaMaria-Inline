@@ -21,8 +21,6 @@ buttons = [
 async def answer(bot, query):
     string_given = query.query.strip()
     iq = string_given.lower()
-    results = []
-    
     if iq == "":
         answer = [
             InlineQueryResultArticle(
@@ -36,6 +34,7 @@ async def answer(bot, query):
         await query.answer(results=answer, cache_time=5, switch_pm_text="💫 Welcome To @Musicx_dlbot", switch_pm_parameter="help")
 
     elif 's' in query.query:
+        results = []
         string, file_type = query.query.split('s', maxsplit=1)
         string = string.strip()
         file_type = file_type.strip().lower()
