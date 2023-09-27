@@ -12,8 +12,24 @@ logger = logging.getLogger(__name__)
 
 @Client.on_inline_query()
 async def answer(bot, query):
-    """Show search results for given inline query"""
+    string_given = query.query.strip()
+    iq = string_given.lower()
     results = []
+    
+    if iq == "":
+        answer = [
+            InlineQueryResultArticle(
+                title="〽️",
+                description="💙You can Search Music.",
+                thumb_url="https://telegra.ph/file/1d586532543a0084eabcd.jpg",
+                input_message_content=InputTextMessageContent("💭 Welcome to Music Search inline Bot."),
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
+        ]
+        await query.answer(results=answer, cache_time=5, switch_pm_text="💫 Welcome To @Musicx_dlbot", switch_pm_parameter="help")
+
+
+    
     if '|' in query.query:
         string, file_type = query.query.split('|', maxsplit=1)
         string = string.strip()
