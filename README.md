@@ -15,21 +15,18 @@
 [![Sparkline](https://stars.medv.io/EvamariaTG/EvaMaria.svg)](https://stars.medv.io/EvamariaTG/EvaMaria)
 
 
+## This Bot mainly made for Inline Search, and you can use this repo for search Songs and move search in Inline Quary.
+
+
 ## Features
 
-- [x] Auto Filter
-- [x] Manual Filter
-- [x] IMDB
 - [x] Admin Commands
 - [x] Broadcast
 - [x] Index
-- [x] IMDB search
 - [x] Inline Search
-- [x] Random pics
-- [x] ids and User info 
+- [x] Random pics 
 - [x] Stats, Users, Chats, Ban, Unban, Leave, Disable, Channel
-- [x] Spelling Check Feature
-- [x] File Store
+
 ## Variables
 
 Read [this](https://telegram.dog/TeamEvamaria/12) before you start messing up with your edits.
