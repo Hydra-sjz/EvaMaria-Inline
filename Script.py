@@ -1,8 +1,10 @@
 class script(object):
-    START_TXT = """Hello {},
-My name is <a href=https://t.me/{}>{}</a> AutoFilter, 
-I can provide Music's, Just Add me to your Music group and request your favourite song there,
-and Enjoy 🌟"""
+    START_TXT = """
+Hi there {}!
+I can Get Song's in Telegram inline Quary to Search and send to you ! 
+
+Just type the Button below.
+"""
     HELP_TXT = """Hey {}\nHere is my commands."""
     ABOUT_TXT = """My Name: {}
 👤 Creator: <a href=https://t.me/TeamEvaMyra>Team Eva</a>
