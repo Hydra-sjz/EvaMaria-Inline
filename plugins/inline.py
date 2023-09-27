@@ -10,6 +10,13 @@ from info import CUSTOM_FILE_CAPTION
 logger = logging.getLogger(__name__)
 
 
+buttons = [
+    [
+        InlineKeyboardButton("🔍Search Music...", url="t.me/Musicx_dlbot")
+    ]
+]
+
+
 @Client.on_inline_query()
 async def answer(bot, query):
     string_given = query.query.strip()
@@ -28,7 +35,7 @@ async def answer(bot, query):
         ]
         await query.answer(results=answer, cache_time=5, switch_pm_text="💫 Welcome To @Musicx_dlbot", switch_pm_parameter="help")
 
-    if 's' in query.query:
+    elif 's' in query.query:
         string, file_type = query.query.split('s', maxsplit=1)
         string = string.strip()
         file_type = file_type.strip().lower()
