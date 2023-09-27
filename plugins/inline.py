@@ -28,8 +28,8 @@ async def answer(bot, query):
         ]
         await query.answer(results=answer, cache_time=5, switch_pm_text="💫 Welcome To @Musicx_dlbot", switch_pm_parameter="help")
 
-    if '.s' in query.query:
-        string, file_type = query.query.split('.s', maxsplit=1)
+    if 's' in query.query:
+        string, file_type = query.query.split('s', maxsplit=1)
         string = string.strip()
         file_type = file_type.strip().lower()
     else:
@@ -60,7 +60,7 @@ async def answer(bot, query):
                 title=file.file_name,
                 document_file_id=file.file_id,
                 caption=f_caption,
-                description=f'Title: {file.file_name}\nSize: {get_size(file.file_size)}\nType: {file.file_type}',
+                description=f'Size: {get_size(file.file_size)}\nType: {file.file_type}\n©️ @SongsAf_bot',
                 reply_markup=reply_markup))
 
     if results:
@@ -91,7 +91,7 @@ async def answer(bot, query):
 def get_reply_markup(query):
     buttons = [
         [
-            InlineKeyboardButton('🔍Search Again🔎', switch_inline_query_current_chat=query)
+            InlineKeyboardButton('🔍Search Again🔎', switch_inline_query_current_chat=f"s {query}")
         ]
         ]
     return InlineKeyboardMarkup(buttons)
