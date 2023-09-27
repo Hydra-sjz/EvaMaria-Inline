@@ -50,7 +50,7 @@ async def answer(bot, query):
                 reply_markup=reply_markup))
 
     if results:
-        switch_pm_text = f"🎵 Results - {total}"
+        switch_pm_text = f"🎵 Total Songs in my Database--> {total}"
         if string:
             switch_pm_text += f" for {string}"
         try:
@@ -77,7 +77,7 @@ async def answer(bot, query):
 def get_reply_markup(query):
     buttons = [
         [
-            InlineKeyboardButton('🔍 Search Again.', switch_inline_query_current_chat=query)
+            InlineKeyboardButton('🔍Search Again🔎', switch_inline_query_current_chat=query)
         ]
         ]
     return InlineKeyboardMarkup(buttons)
