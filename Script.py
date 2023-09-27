@@ -1,8 +1,7 @@
 class script(object):
     START_TXT = """
 Hi there {}!
-I can Get Song's in Telegram inline Quary to Search and send to you ! 
-
+I can Get Song's in Telegram inline Quary to Search and send to you.
 Just type the Button below.
 """
     HELP_TXT = """Hey {}\nHere is my commands."""
