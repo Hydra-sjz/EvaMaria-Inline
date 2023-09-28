@@ -20,8 +20,8 @@ buttons = [
 @Client.on_inline_query()
 async def answer(bot, query):
   """Andi Myre"""
+    results = []
     if 's' in query.query:
-        results = []
         string, file_type = query.query.split('s', maxsplit=1)
         string = string.strip()
         file_type = file_type.strip().lower()
