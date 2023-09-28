@@ -8,12 +8,11 @@ from pyrogram.types import (
     InlineKeyboardMarkup,
     InlineQueryResultPhoto,
 )
-from mbot import Mbot
 import os
 import requests ,os, wget 
 
 
-@Mbot.on_inline_query()
+@Client.on_inline_query()
 async def inline_spotify(client: Client, query: InlineQuery):
     string_given = query.query.strip()
     iq = string_given.lower()
