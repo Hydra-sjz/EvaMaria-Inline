@@ -39,7 +39,7 @@ async def answer(bot, query):
         string = string.strip()
         file_type = file_type.strip().lower()
     else:
-        string = iq.iq.strip()
+        string = iq.strip()
         file_type = None
 
     offset = int(iq.offset or 0)
@@ -91,13 +91,13 @@ async def answer(bot, query):
         await query.answer(results=[],
                            is_personal = True,
                            switch_pm_text=switch_pm_text,
-                           switch_pm_parameter="okay")
+                           switch_pm_parameter="OkDa")
 
 
-def get_reply_markup(query):
+def get_reply_markup(iq):
     buttons = [
         [
-            InlineKeyboardButton('🔍Search Again🔎', switch_inline_query_current_chat=f"s {query}")
+            InlineKeyboardButton('🔍Search Again🔎', switch_inline_query_current_chat=f"s {iq}")
         ]
         ]
     return InlineKeyboardMarkup(buttons)
