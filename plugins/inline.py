@@ -19,7 +19,6 @@ buttons = [
 
 @Client.on_inline_query()
 async def answer(bot, query):
-  """Andi Myre"""
     results = []
     if 's' in query.query:
         string, file_type = query.query.split('s', maxsplit=1)
@@ -35,6 +34,7 @@ async def answer(bot, query):
                                                   file_type=file_type,
                                                   max_results=50,
                                                   offset=offset)
+    
     for file in files:
         title=file.file_name
         size=get_size(file.file_size)
