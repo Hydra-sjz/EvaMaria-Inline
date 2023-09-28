@@ -16,7 +16,7 @@ import requests ,os, wget
 async def inline_spotify(client: Client, query: InlineQuery):
     string_given = query.query.strip()
     iq = string_given.lower()
-    elif iq.startswith("yt"):
+    if iq.startswith("yt"):
         result = []
         input_quer = (iq.split("yt", maxsplit=1)[1]).strip()
         search = SearchVideos(str(input_quer), offset=1, mode="dict", max_results=20)
