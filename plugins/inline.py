@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 buttons = [
     [
-        InlineKeyboardButton("🔍Search Music...", url="t.me/Musicx_dlbot")
+        InlineKeyboardButton("🔍Search Music...", switch_inline_query_current_chat="s ")
     ]
 ]
 
@@ -31,7 +31,7 @@ async def answer(bot, query):
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
         ]
-        await query.answer(results=answer, cache_time=5, switch_pm_text="💫 Welcome To @Musicx_dlbot", switch_pm_parameter="help")
+        await query.answer(results=answer, cache_time=5, switch_pm_text="💫 Welcome To @SongsAf_bot", switch_pm_parameter="help")
 
     elif 's' in query.query:
         results = []
