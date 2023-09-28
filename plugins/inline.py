@@ -35,7 +35,7 @@ async def answer(bot, query):
 
     elif iq.startswith("s"):
         results = []
-        string, file_type = (iq.split('s', maxsplit=1)[1]).strip()
+        string, file_type = iq.split('s', maxsplit=1)
         string = string.strip()
         file_type = file_type.strip().lower()
     else:
