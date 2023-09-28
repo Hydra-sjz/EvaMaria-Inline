@@ -1,7 +1,7 @@
 import logging
 from pyrogram import Client, emoji, filters
 from pyrogram.errors.exceptions.bad_request_400 import QueryIdInvalid
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultCachedDocument, InlineQuery, InlineQueryResultArticle, InputTextMessageContent
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultCachedDocument, InlineQuery
 
 from database.ia_filterdb import get_search_results
 from utils import get_size
@@ -19,36 +19,22 @@ buttons = [
 
 @Client.on_inline_query()
 async def answer(bot, query):
-    string_given = query.query.strip()
-    iq = string_given.lower()
-    if iq == "":
-        answer = [
-            InlineQueryResultArticle(
-                title="🎵 @SongsAf_bot",
-                description="💙You can Search Music.",
-                thumb_url="https://telegra.ph/file/1d586532543a0084eabcd.jpg",
-                input_message_content=InputTextMessageContent("💭 Welcome to Music Search inline Bot."),
-                reply_markup=InlineKeyboardMarkup(buttons)
-            )
-        ]
-        await query.answer(results=answer, cache_time=5, switch_pm_text="💫 Welcome To @SongsAf_bot", switch_pm_parameter="help")
-
-    elif iq.startswith("s"):
+  """Andi Myre"""
+    if 's' in query.query:
         results = []
-        string, file_type = iq.split('s', maxsplit=1)
+        string, file_type = query.query.split('s', maxsplit=1)
         string = string.strip()
         file_type = file_type.strip().lower()
     else:
-        string = iq.strip()
+        string = query.query.strip()
         file_type = None
 
-    offset = int(iq.offset or 0)
+    offset = int(query.offset or 0)
     reply_markup = get_reply_markup(query=string)
     files, next_offset, total = await get_search_results(string,
                                                   file_type=file_type,
                                                   max_results=50,
                                                   offset=offset)
-
     for file in files:
         title=file.file_name
         size=get_size(file.file_size)
@@ -94,10 +80,10 @@ async def answer(bot, query):
                            switch_pm_parameter="OkDa")
 
 
-def get_reply_markup(iq):
+def get_reply_markup(query):
     buttons = [
         [
-            InlineKeyboardButton('🔍Search Again🔎', switch_inline_query_current_chat=f"s {iq}")
+            InlineKeyboardButton('🔍Search Again🔎', switch_inline_query_current_chat=f"s {query}")
         ]
         ]
     return InlineKeyboardMarkup(buttons)
