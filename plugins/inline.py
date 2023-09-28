@@ -33,16 +33,16 @@ async def answer(bot, query):
         ]
         await query.answer(results=answer, cache_time=5, switch_pm_text="💫 Welcome To @SongsAf_bot", switch_pm_parameter="help")
 
-    elif 's' in query.query:
+    elif iq.startswith("s"):
         results = []
-        string, file_type = query.query.split('s', maxsplit=1)
+        string, file_type = (iq.iq.split('s', maxsplit=1)[1]).strip()
         string = string.strip()
         file_type = file_type.strip().lower()
     else:
-        string = query.query.strip()
+        string = iq.iq.strip()
         file_type = None
 
-    offset = int(query.offset or 0)
+    offset = int(iq.offset or 0)
     reply_markup = get_reply_markup(query=string)
     files, next_offset, total = await get_search_results(string,
                                                   file_type=file_type,
