@@ -2,7 +2,7 @@ class script(object):
     START_TXT = """
 Hey there {}, This Bot lets you search the Songs in my Database and i just share with Anyware. 
 It's Only supports Inline Search Queries.
-Try by writing a query to search a song or type `@songsaf_bot song_name` in any chat.
+Try by writing a query to search a song or type <code>@songsaf_bot song_name</code> in any chat.
 You Just do type the Button below :)
 """
     HELP_TXT = """Hey {}\nHere is my commands."""
